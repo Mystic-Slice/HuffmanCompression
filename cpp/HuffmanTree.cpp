@@ -18,11 +18,7 @@ class HuffmanTree {
             this->root->left->updateCode("0");
             this->root->right->updateCode("1");
         }
-
-        bool compare(HuffmanTree a, HuffmanTree b){
-            return a.root->freq < b.root->freq;
-        }
-
+        
         map<char, string> characterCodes() {
             map<char, string> charCodeMap;
             stack<Node*> dfsStack;

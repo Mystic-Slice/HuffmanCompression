@@ -17,9 +17,10 @@ int main() {
     ifstream plainTextFile("sample.txt");
     ofstream encodedTextFile("sampleEncoded.txt");
     ofstream metaData("metadata.txt");
-    while(plainTextFile>>s) {
-        text += s + '\n';
+    for(string line; getline(plainTextFile, line);){
+        text += line + '\n';
     }
+    text = text.substr(0, text.size()-1);
 
     cout<<"Calculating character frequencies"<<endl;
     map<char, int> charFreqMap;
