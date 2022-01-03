@@ -29,7 +29,7 @@ def analyseData(cppTime, pythonTime):
     pythonSpeed = 1/pythonAverage
 
     if(cppSpeed > pythonSpeed):
-        print(f'C++ is {round(cppSpeed/pythonSpeed, 2)}times as fast as Python')
+        print(f'C++ is {round(cppSpeed/pythonSpeed, 2)} times as fast as Python')
     else:
         print(f'Python is {round(pythonSpeed/cppSpeed, 2)} times as fast as C++')
 

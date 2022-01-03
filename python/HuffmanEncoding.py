@@ -53,10 +53,10 @@ print("Encoding complete")
 
 end = time.time()
 
-sizeBeforeEncoding = len(text)*8
-sizeAfterEncoding = len(encodedText)
-compressionRatio = sizeBeforeEncoding/sizeAfterEncoding
-timeTaken = end-start
+sizeBeforeEncoding = len(text)
+sizeAfterEncoding = len(encodedText)//8
+compressionRatio = round(sizeBeforeEncoding/sizeAfterEncoding, 2)
+timeTaken = round(end-start, 3)
 
 with open("metadata.txt", "a") as metadataFile:
     print(file=metadataFile)
@@ -66,4 +66,4 @@ with open("metadata.txt", "a") as metadataFile:
     print("Size After Encoding:  ", sizeAfterEncoding, file=metadataFile)
     print("Compression Ratio:    ", compressionRatio, file=metadataFile)
     print(f'Time Taken:            {timeTaken}s', file=metadataFile)
-    print(f'The encoded text is {100/compressionRatio}% the size of plain text', file=metadataFile)
+    print(f'The encoded text is {round(100/compressionRatio, 3)}% the size of plain text', file=metadataFile)

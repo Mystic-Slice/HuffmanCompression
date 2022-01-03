@@ -66,8 +66,8 @@ int main() {
 
     tEnd = clock();
 
-    int sizeBeforeEncoding = text.size()*8;
-    int sizeAfterEncoding = encodedText.size();
+    int sizeBeforeEncoding = text.size();
+    int sizeAfterEncoding = encodedText.size()/8;
     double compressionRatio = (double)sizeBeforeEncoding/(double)sizeAfterEncoding;
     double timeTaken = double(tEnd-tStart)/CLOCKS_PER_SEC;
     metaData<<endl<<"Metrics"<<endl;
